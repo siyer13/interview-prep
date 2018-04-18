@@ -1,5 +1,15 @@
 // dfs.java - depth-first search
 //////////////////////////////////////////////////////////
+class Vertex {
+  public char label;
+  public boolean wasVisited;
+
+  public Vertex(char lab) {
+    label = lab;
+    wasVisited = false;
+  }
+}
+//////////////////////////////////////////////////////////
 class StackX {
   private final int SIZE = 20;
   private int[] st;
@@ -49,7 +59,7 @@ class Graph {
   }
 //////////////////////////////////////////////////////////
   public void addVertex(char lab) {
-    vertexList[nVerts++] = new vertex(lab);
+    vertexList[nVerts++] = new Vertex(lab);
   }
 //////////////////////////////////////////////////////////
   public void addEdge(int start, int end) {
@@ -84,15 +94,14 @@ class Graph {
     }
 //////////////////////////////////////////////////////////
   public int getAdjUnvistedVertex(int v) {
-    for(int j=0; j<nVerts; j++) {
+    for(int j=0; j<nVerts; j++)
       if(adjMat[v][j] == 1 && vertexList[j].wasVisited == false)
         return j;
       return -1;
-    }
    }
-}
+ } // end of Graph class
 //////////////////////////////////////////////////////////
-class DFSApp {
+class dfs {
   public static void main(String[] args) {
     Graph theGraph = new Graph();
 
