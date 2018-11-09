@@ -5,10 +5,10 @@ public class RemoveDuplicates {
 	}
 
     int remove_duplicate(int A[],int N) {    
-        int fin =0;
+        int final =0;
 		    for(int i=1;i<N;++i)
-			    if(A[i]!=A[fin])
-			        A[++fin]=A[i];
-        return fin+1;
+			    if(A[i]!=A[final])
+			        A[++final]=A[i];
+        return final+1;
     }
 }
