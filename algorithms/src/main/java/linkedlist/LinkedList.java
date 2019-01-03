@@ -37,5 +37,6 @@ public class LinkedList {
         FindElement fe = new FindElement();
         int me = fe.findMiddleElement(ll);
         System.out.println("MIDDLE ELEMENT :" + me);
+        System.out.println(fe.isCyclic(ll));
     }
 }
