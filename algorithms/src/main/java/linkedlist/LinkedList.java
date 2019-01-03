@@ -4,38 +4,38 @@ public class LinkedList {
 
     private Node head;  // Head of LinkedList
     // Linked List Node
-    class Node {
-        private int data;
-        private Node next;
-
-        Node(int data) {
-            this.data = data;
-        }
-    }
 
     private void add(int data) {
         Node newNode = new Node(data);
-        newNode.next = head;
+        newNode.setNext(head);
         head = newNode;
+    }
+
+    public Node getHeadNode() {
+        return head;
     }
 
     private void show() {
         Node nodes = head;
         while(nodes != null) {
-            System.out.print(nodes.data + " -> " );
-            nodes = nodes.next;
+            System.out.print(nodes.getData()+ " -> " );
+            nodes = nodes.getNext();
         }
+        System.out.println();
     }
 
     public static void main(String[] args) {
-
         LinkedList ll = new LinkedList();
+        ll.add(1);
+        ll.add(2);
+        ll.add(3);
+        ll.add(4);
         ll.add(5);
-       // ll.show();
-        ll.add(10);
-       // ll.show();
         ll.add(6);
+        ll.add(7);
         ll.show();
-
+        FindElement fe = new FindElement();
+        int me = fe.findMiddleElement(ll);
+        System.out.println("MIDDLE ELEMENT :" + me);
     }
 }
